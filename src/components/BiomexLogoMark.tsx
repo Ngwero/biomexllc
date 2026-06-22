@@ -6,7 +6,7 @@ type BiomexLogoMarkProps = {
 };
 
 export default function BiomexLogoMark({
-  className = "h-10 w-auto sm:h-11",
+  className = "h-8 w-auto sm:h-10 md:h-11",
   light = false,
 }: BiomexLogoMarkProps) {
   return (

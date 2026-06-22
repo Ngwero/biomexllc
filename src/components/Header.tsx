@@ -152,7 +152,7 @@ export default function Header() {
   return (
     <>
       <div className="pointer-events-none fixed top-3 z-50 w-full px-3 sm:top-4 sm:px-5 lg:px-8">
-        <header className="pointer-events-auto mx-auto flex max-w-[1320px] items-center justify-between gap-3 rounded-full border border-white/70 bg-white/80 px-3 py-2 shadow-[0_8px_40px_rgba(0,0,0,0.1)] backdrop-blur-xl sm:gap-4 sm:px-5 sm:py-2.5">
+        <header className="pointer-events-auto mx-auto flex max-w-[1320px] items-center justify-between gap-2 rounded-full border border-white/70 bg-white/80 px-2.5 py-2 shadow-[0_8px_40px_rgba(0,0,0,0.1)] backdrop-blur-xl sm:gap-4 sm:px-5 sm:py-2.5">
           <Logo />
 
           <nav className="hidden flex-1 items-center justify-center lg:flex">
@@ -247,31 +247,34 @@ export default function Header() {
             </Link>
           </div>
 
-          <button
-            type="button"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2a2a2a] text-white transition hover:bg-[#4069a5] lg:hidden"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-          >
-            <div className="flex w-4 flex-col items-center justify-center gap-1">
-              <span
-                className={`block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ${
-                  mobileOpen ? "translate-y-1.5 rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ${
-                  mobileOpen ? "scale-0 opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ${
-                  mobileOpen ? "-translate-y-1.5 -rotate-45" : ""
-                }`}
-              />
-            </div>
-          </button>
+          <div className="flex items-center gap-1.5 lg:hidden">
+            <CartButton />
+            <button
+              type="button"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2a2a2a] text-white transition hover:bg-[#4069a5]"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+            >
+              <div className="flex w-4 flex-col items-center justify-center gap-1">
+                <span
+                  className={`block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ${
+                    mobileOpen ? "translate-y-1.5 rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ${
+                    mobileOpen ? "scale-0 opacity-0" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-4 rounded-full bg-current transition-all duration-300 ${
+                    mobileOpen ? "-translate-y-1.5 -rotate-45" : ""
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </header>
       </div>
 
@@ -284,13 +287,13 @@ export default function Header() {
       />
 
       <div
-        className={`fixed left-3 right-3 top-[72px] z-50 overflow-hidden rounded-3xl border border-white/70 bg-white/95 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-xl transition-all duration-300 lg:hidden ${
+        className={`fixed inset-x-2 top-[68px] z-50 flex max-h-[calc(100dvh-5rem)] flex-col overflow-hidden rounded-3xl border border-white/70 bg-white/95 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-xl transition-all duration-300 sm:inset-x-3 sm:top-[72px] lg:hidden ${
           mobileOpen
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
-        <nav className="max-h-[70vh] overflow-y-auto p-3">
+        <nav className="flex-1 overflow-y-auto overscroll-contain p-3">
           <ul className="space-y-0.5">
             {navItems.map((item) => (
               <li key={item.label}>
@@ -303,7 +306,7 @@ export default function Header() {
                           mobileDropdown === item.label ? null : item.label
                         )
                       }
-                      className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-semibold uppercase tracking-wide ${
+                      className={`flex min-h-11 w-full items-center justify-between rounded-xl px-4 py-3.5 text-left text-sm font-semibold uppercase tracking-wide ${
                         isActive(item.href)
                           ? "text-[#4069a5]"
                           : "text-[#333] hover:bg-black/[0.03]"
@@ -349,7 +352,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     onClick={closeMobile}
-                    className={`block rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-wide ${
+                    className={`flex min-h-11 items-center rounded-xl px-4 py-3.5 text-sm font-semibold uppercase tracking-wide ${
                       isActive(item.href)
                         ? "text-[#4069a5]"
                         : "text-[#333] hover:bg-black/[0.03]"
@@ -363,12 +366,11 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center justify-end gap-3 border-t border-black/5 p-3">
-          <CartButton />
+        <div className="flex shrink-0 items-center justify-between gap-3 border-t border-black/5 p-3">
           <Link
             href="/contact-us"
             onClick={closeMobile}
-            className="rounded-lg bg-gradient-to-r from-[#4069a5] to-[#033250] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white"
+            className="flex min-h-11 flex-1 items-center justify-center rounded-lg bg-gradient-to-r from-[#4069a5] to-[#033250] px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-white"
           >
             Service Request
           </Link>

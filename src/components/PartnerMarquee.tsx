@@ -12,7 +12,7 @@ function MarqueeRow({ items }: { items: Partner[] }) {
         {track.map((partner, i) => (
           <div
             key={`${partner.name}-${i}`}
-            className="flex h-[88px] w-[200px] shrink-0 items-center justify-center px-5 md:h-24 md:w-[220px]"
+            className="flex h-[72px] w-[160px] shrink-0 items-center justify-center px-3 sm:h-[88px] sm:w-[200px] sm:px-5 md:h-24 md:w-[220px]"
             title={partner.name}
           >
             <Image
@@ -31,12 +31,12 @@ function MarqueeRow({ items }: { items: Partner[] }) {
 
 export default function PartnerMarquee() {
   return (
-    <div className="relative left-1/2 mt-10 w-screen max-w-[100vw] -translate-x-1/2">
-      <p className="mb-5 text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-[#707070]">
+    <div className="relative mt-8 w-full sm:mt-10">
+      <p className="mb-4 px-4 text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-[#707070] sm:mb-5 sm:text-[11px] sm:tracking-[0.28em]">
         Trusted by leading healthcare organizations
       </p>
 
-      <div className="relative overflow-hidden bg-gradient-to-b from-[#033250] via-[#043a5c] to-[#033250] py-8 md:py-10">
+      <div className="relative overflow-hidden bg-gradient-to-b from-[#033250] via-[#043a5c] to-[#033250] py-6 sm:py-8 md:py-10">
         <div
           className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#033250] to-transparent sm:w-24 md:w-32"
           aria-hidden="true"

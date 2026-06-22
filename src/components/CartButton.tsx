@@ -52,8 +52,8 @@ export default function CartButton() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 w-[min(100vw-2rem,360px)] pt-2">
-          <div className="overflow-hidden rounded-2xl border border-black/8 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
+        <div className="fixed inset-x-3 top-[4.5rem] z-[60] sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:z-50 sm:pt-2">
+          <div className="overflow-hidden rounded-2xl border border-black/8 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.15)] sm:w-[min(100vw-1.5rem,360px)]">
           <div className="border-b border-[#e8e6e6] px-4 py-3">
             <p className="text-sm font-bold text-black">
               Your Cart {itemCount > 0 && `(${itemCount})`}

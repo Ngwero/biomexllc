@@ -16,7 +16,7 @@ export default function SectionTitle({
   return (
     <div className={className}>
       <h2
-        className={`text-2xl font-bold uppercase leading-tight md:text-3xl lg:text-[2rem] ${textColor}`}
+        className={`text-xl font-bold uppercase leading-tight sm:text-2xl md:text-3xl lg:text-[2rem] ${textColor}`}
       >
         {children}
         {accent && (

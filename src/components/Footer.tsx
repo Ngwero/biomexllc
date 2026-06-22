@@ -17,7 +17,7 @@ const websiteLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[#033250] text-white">
-      <div className="mx-auto grid max-w-[980px] gap-10 px-4 py-12 md:grid-cols-3">
+      <div className="mx-auto grid max-w-[980px] gap-8 px-4 py-10 sm:gap-10 sm:py-12 md:grid-cols-3">
         <ScrollReveal variant="fade-up" delay={0}>
           <div>
             <h4 className="mb-4 text-sm font-bold uppercase tracking-wider">

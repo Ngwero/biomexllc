@@ -9,12 +9,12 @@ type PageHeroProps = {
 export default function PageHero({ title, subtitle, dark = false }: PageHeroProps) {
   return (
     <section
-      className={`border-b px-4 py-16 text-center ${
+      className={`border-b px-4 py-12 text-center sm:py-16 ${
         dark ? "bg-[#033250] text-white" : "bg-[#e8e6e6]"
       }`}
     >
       <ScrollReveal className="mx-auto max-w-[980px]" variant="fade-up">
-        <h1 className="text-3xl font-bold uppercase tracking-wide md:text-4xl">
+        <h1 className="text-2xl font-bold uppercase leading-tight tracking-wide sm:text-3xl md:text-4xl">
           {title}
         </h1>
         {subtitle && (

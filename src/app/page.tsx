@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative -mt-24 h-[500px] w-full overflow-hidden md:h-[600px] lg:-mt-28 lg:h-[785px]">
+      <section className="relative -mt-20 h-[min(85vh,560px)] w-full overflow-hidden sm:-mt-24 sm:h-[500px] md:h-[600px] lg:-mt-28 lg:h-[785px]">
         <Image
           src={images.hero}
           alt="Biomedical engineers servicing medical equipment"
@@ -36,13 +36,13 @@ export default function Home() {
           className="relative mx-auto flex h-full max-w-[980px] flex-col items-center justify-center px-4 text-center text-white"
           variant="fade-up"
         >
-          <p className="mb-2 text-sm font-light uppercase tracking-[0.3em] md:text-base">
+          <p className="mb-2 text-[11px] font-light uppercase tracking-[0.18em] sm:text-sm sm:tracking-[0.3em] md:text-base">
             Professional &bull; Reliable &bull; Healthcare Focused
           </p>
-          <h1 className="max-w-4xl text-3xl font-bold uppercase leading-tight md:text-5xl lg:text-6xl">
+          <h1 className="max-w-4xl text-2xl font-bold uppercase leading-tight sm:text-3xl md:text-5xl lg:text-6xl">
             Your Trusted One-Call Medical Equipment Service Partner
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/90 md:text-lg">
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/90 sm:mt-6 sm:text-base md:text-lg">
             {company.description}
           </p>
         </ScrollReveal>
@@ -90,11 +90,18 @@ export default function Home() {
       </RevealSection>
 
       {/* Services bar */}
-      <RevealSection className="bg-[#4069a5] py-4">
+      <RevealSection className="bg-[#4069a5] px-4 py-4">
         <ScrollReveal variant="fade" className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-white md:text-base">
-            REPAIRS | INSTALLATIONS | PREVENTATIVE MAINTENANCE | EQUIPMENT SALES |
-            CONSUMABLE SALES
+          <p className="mx-auto max-w-4xl text-[11px] font-semibold uppercase leading-relaxed tracking-wide text-white sm:text-sm md:text-base">
+            <span className="block sm:inline">Repairs</span>
+            <span className="mx-2 hidden sm:inline">|</span>
+            <span className="block sm:inline">Installations</span>
+            <span className="mx-2 hidden sm:inline">|</span>
+            <span className="block sm:inline">Preventative Maintenance</span>
+            <span className="mx-2 hidden sm:inline">|</span>
+            <span className="block sm:inline">Equipment Sales</span>
+            <span className="mx-2 hidden sm:inline">|</span>
+            <span className="block sm:inline">Consumable Sales</span>
           </p>
         </ScrollReveal>
       </RevealSection>
@@ -138,18 +145,18 @@ export default function Home() {
       </RevealSection>
 
       {/* Detailed Reporting */}
-      <RevealSection className="overflow-hidden bg-white py-16 md:py-20">
-        <div className="mx-auto grid max-w-[980px] grid-cols-1 items-center gap-12 px-4 lg:grid-cols-2 lg:gap-16">
+      <RevealSection className="overflow-hidden bg-white py-12 md:py-20">
+        <div className="mx-auto grid max-w-[980px] grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 lg:gap-16">
           <ScrollReveal variant="fade-right" className="relative mx-auto min-w-0 w-full max-w-md lg:mx-0">
-            <div className="relative">
+            <div className="relative pb-8 sm:pb-12 lg:pb-0">
               <Image
                 src={images.screenshot}
                 alt="Customer service job report"
                 width={773}
                 height={1024}
-                className="h-auto w-full rotate-[-2deg] shadow-lg"
+                className="h-auto w-full shadow-lg sm:rotate-[-2deg]"
               />
-              <div className="absolute -bottom-6 -right-4 w-[75%] md:-right-8">
+              <div className="relative mt-4 w-full sm:absolute sm:-bottom-6 sm:-right-4 sm:mt-0 sm:w-[75%] md:-right-8">
                 <Image
                   src={images.simproTablet}
                   alt="Service reporting portal on tablet"
@@ -254,7 +261,7 @@ export default function Home() {
               focus, and increased operational efficiency for your healthcare
               technology systems.
             </p>
-            <Button href="/contact-us" variant="outline">
+            <Button href="/contact-us" variant="outline" className="w-full sm:w-auto">
               Lets Go
             </Button>
           </ScrollReveal>
@@ -309,8 +316,8 @@ export default function Home() {
       </RevealSection>
 
       {/* Industry Trust */}
-      <RevealSection className="bg-white pt-16 pb-0">
-        <div className="mx-auto max-w-[980px] px-4 text-center">
+      <RevealSection className="overflow-hidden bg-white pt-12 pb-0 sm:pt-16">
+        <div className="mx-auto max-w-[980px] overflow-hidden px-4 text-center">
           <h2 className="mb-2 text-2xl font-bold uppercase text-black md:text-3xl">
             Industry Trust
           </h2>
@@ -345,20 +352,20 @@ export default function Home() {
           {services.length} specialized service offerings for healthcare
           technology management
         </p>
-        <div className="mx-auto grid max-w-[980px] grid-cols-2 gap-4 px-4 md:grid-cols-4">
+        <div className="mx-auto grid max-w-[980px] grid-cols-1 gap-3 px-4 sm:grid-cols-2 md:grid-cols-4 md:gap-4">
           {services.slice(0, 8).map((service, i) => (
             <ScrollReveal
               key={service}
               variant="fade-up"
               delay={i * 60}
-              className="rounded-lg bg-white/10 px-3 py-4 text-center text-xs font-medium text-white/90"
+              className="rounded-lg bg-white/10 px-4 py-4 text-center text-sm font-medium leading-snug text-white/90 sm:text-xs"
             >
               {service}
             </ScrollReveal>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Button href="/services" variant="outline">
+          <Button href="/services" variant="outline" className="w-full sm:w-auto">
             View All Services
           </Button>
         </div>
@@ -375,7 +382,7 @@ export default function Home() {
               We&apos;re looking for qualified biomedical engineers and technical
               specialists to join our team.
             </p>
-            <Button href="/careers">View Open Positions</Button>
+            <Button href="/careers" className="w-full sm:w-auto">View Open Positions</Button>
           </div>
         </div>
       </RevealSection>

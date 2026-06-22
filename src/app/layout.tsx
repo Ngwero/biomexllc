@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   description: company.description,
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +32,7 @@ export default function RootLayout({
       <body className={`${montserrat.variable} antialiased`}>
         <Providers>
           <Header />
-          <main className="pt-24 lg:pt-28">{children}</main>
+          <main className="pt-20 sm:pt-24 lg:pt-28">{children}</main>
           <Footer />
         </Providers>
       </body>
