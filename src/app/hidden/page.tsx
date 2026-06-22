@@ -3,9 +3,9 @@ import RevealSection from "@/components/RevealSection";
 import PortalAuth from "@/components/PortalAuth";
 
 export const metadata = {
-  title: "Customer Service Portal | Sierra Biomed",
+  title: "Customer Service Portal | BIOMEX LLC",
   description:
-    "Access service records, job sheets, reports, and repairs through the Sierra Biomed customer portal.",
+    "Access service records, job sheets, reports, and repairs through the Biomex LLC customer portal.",
 };
 
 export default function PortalPage() {
